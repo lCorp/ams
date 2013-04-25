@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="AMSModelStoreContainer">
+          <EntitySet Name="Accounts" EntityType="AMSModel.Store.Accounts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BannerInZones" EntityType="AMSModel.Store.BannerInZones" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Banners" EntityType="AMSModel.Store.Banners" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Campaigns" EntityType="AMSModel.Store.Campaigns" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Modules" EntityType="AMSModel.Store.Modules" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Pages" EntityType="AMSModel.Store.Pages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Permissions" EntityType="AMSModel.Store.Permissions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Roles" EntityType="AMSModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Templates" EntityType="AMSModel.Store.Templates" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserInRoles" EntityType="AMSModel.Store.UserInRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Websites" EntityType="AMSModel.Store.Websites" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zones" EntityType="AMSModel.Store.Zones" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ParentID" Type="uniqueidentifier" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="OTP" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="BannerInZones">
+          <Key>
+            <PropertyRef Name="BannerID" />
+            <PropertyRef Name="ZoneID" />
+            <PropertyRef Name="CampaignID" />
+          </Key>
+          <Property Name="BannerID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ZoneID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CampaignID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StartDateTime" Type="datetime" />
+          <Property Name="EndDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Banners">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BannerName" Type="nvarchar" MaxLength="100" />
+          <Property Name="BannerUrl" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Campaigns">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CampaignName" Type="nvarchar" MaxLength="100" />
+          <Property Name="StartDateTime" Type="datetime" />
+          <Property Name="EndDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Modules">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ParentID" Type="uniqueidentifier" />
+          <Property Name="ControllerCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ActionCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="Parameters" Type="nvarchar(max)" />
+          <Property Name="ModuleName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ModuleType" Type="int" />
+          <Property Name="ShowInMenu" Type="bit" />
+          <Property Name="SortIndex" Type="int" />
+        </EntityType>
+        <EntityType Name="Pages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="WebsiteID" Type="uniqueidentifier" />
+          <Property Name="PageName" Type="nvarchar" MaxLength="100" />
+          <Property Name="PageUrl" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Permissions">
+          <Key>
+            <PropertyRef Name="AccountID" />
+            <PropertyRef Name="ModuleID" />
+            <PropertyRef Name="AccountType" />
+          </Key>
+          <Property Name="AccountID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModuleID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AccountType" Type="int" Nullable="false" />
+          <Property Name="FullControl" Type="bit" />
+          <Property Name="Changeable" Type="bit" />
+          <Property Name="ReadOnly" Type="bit" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Templates">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TemplateName" Type="nvarchar" MaxLength="100" />
+          <Property Name="TemplateContent" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UserInRoles">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Websites">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="WebsiteName" Type="nvarchar" MaxLength="100" />
+          <Property Name="WebsiteUrl" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Zones">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PageID" Type="uniqueidentifier" />
+          <Property Name="ZoneName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Width" Type="float" />
+          <Property Name="Height" Type="float" />
+          <Property Name="TemplateID" Type="uniqueidentifier" />
+          <Property Name="ContainerID" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AMSModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="AMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="AMSModel.Account" />
+          <EntitySet Name="BannerInZones" EntityType="AMSModel.BannerInZone" />
+          <EntitySet Name="Banners" EntityType="AMSModel.Banner" />
+          <EntitySet Name="Campaigns" EntityType="AMSModel.Campaign" />
+          <EntitySet Name="Modules" EntityType="AMSModel.Module" />
+          <EntitySet Name="Pages" EntityType="AMSModel.Page" />
+          <EntitySet Name="Permissions" EntityType="AMSModel.Permission" />
+          <EntitySet Name="Roles" EntityType="AMSModel.Role" />
+          <EntitySet Name="Templates" EntityType="AMSModel.Template" />
+          <EntitySet Name="UserInRoles" EntityType="AMSModel.UserInRole" />
+          <EntitySet Name="Websites" EntityType="AMSModel.Website" />
+          <EntitySet Name="Zones" EntityType="AMSModel.Zone" />
+        </EntityContainer>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="Guid" Name="ParentID" />
+          <Property Type="String" Name="UserName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OTP" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BannerInZone">
+          <Key>
+            <PropertyRef Name="BannerID" />
+            <PropertyRef Name="ZoneID" />
+            <PropertyRef Name="CampaignID" />
+          </Key>
+          <Property Type="Guid" Name="BannerID" Nullable="false" />
+          <Property Type="Guid" Name="ZoneID" Nullable="false" />
+          <Property Type="Guid" Name="CampaignID" Nullable="false" />
+          <Property Type="DateTime" Name="StartDateTime" />
+          <Property Type="DateTime" Name="EndDateTime" />
+        </EntityType>
+        <EntityType Name="Banner">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="BannerName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BannerUrl" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Campaign">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="CampaignName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="StartDateTime" />
+          <Property Type="DateTime" Name="EndDateTime" />
+        </EntityType>
+        <EntityType Name="Module">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="Guid" Name="ParentID" />
+          <Property Type="String" Name="ControllerCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ActionCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Parameters" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ModuleName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ModuleType" />
+          <Property Type="Boolean" Name="ShowInMenu" />
+          <Property Type="Int32" Name="SortIndex" />
+        </EntityType>
+        <EntityType Name="Page">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="Guid" Name="WebsiteID" />
+          <Property Type="String" Name="PageName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PageUrl" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="AccountID" />
+            <PropertyRef Name="ModuleID" />
+            <PropertyRef Name="AccountType" />
+          </Key>
+          <Property Type="Guid" Name="AccountID" Nullable="false" />
+          <Property Type="Guid" Name="ModuleID" Nullable="false" />
+          <Property Type="Int32" Name="AccountType" Nullable="false" />
+          <Property Type="Boolean" Name="FullControl" />
+          <Property Type="Boolean" Name="Changeable" />
+          <Property Type="Boolean" Name="ReadOnly" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="RoleName" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Template">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="TemplateName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TemplateContent" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserInRole">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Type="Guid" Name="UserID" Nullable="false" />
+          <Property Type="Guid" Name="RoleID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Website">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="WebsiteName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WebsiteUrl" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Zone">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="Guid" Name="PageID" />
+          <Property Type="String" Name="ZoneName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Width" />
+          <Property Type="Double" Name="Height" />
+          <Property Type="Guid" Name="TemplateID" />
+          <Property Type="String" Name="ContainerID" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AMSModelStoreContainer" CdmEntityContainer="AMSEntities">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="AMSModel.Account">
+              <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="OTP" ColumnName="OTP" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BannerInZones">
+            <EntityTypeMapping TypeName="AMSModel.BannerInZone">
+              <MappingFragment StoreEntitySet="BannerInZones">
+                <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
+                <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+                <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="BannerID" ColumnName="BannerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Banners">
+            <EntityTypeMapping TypeName="AMSModel.Banner">
+              <MappingFragment StoreEntitySet="Banners">
+                <ScalarProperty Name="BannerUrl" ColumnName="BannerUrl" />
+                <ScalarProperty Name="BannerName" ColumnName="BannerName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Campaigns">
+            <EntityTypeMapping TypeName="AMSModel.Campaign">
+              <MappingFragment StoreEntitySet="Campaigns">
+                <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
+                <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+                <ScalarProperty Name="CampaignName" ColumnName="CampaignName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modules">
+            <EntityTypeMapping TypeName="AMSModel.Module">
+              <MappingFragment StoreEntitySet="Modules">
+                <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+                <ScalarProperty Name="ShowInMenu" ColumnName="ShowInMenu" />
+                <ScalarProperty Name="ModuleType" ColumnName="ModuleType" />
+                <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+                <ScalarProperty Name="Parameters" ColumnName="Parameters" />
+                <ScalarProperty Name="ActionCode" ColumnName="ActionCode" />
+                <ScalarProperty Name="ControllerCode" ColumnName="ControllerCode" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pages">
+            <EntityTypeMapping TypeName="AMSModel.Page">
+              <MappingFragment StoreEntitySet="Pages">
+                <ScalarProperty Name="PageUrl" ColumnName="PageUrl" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="WebsiteID" ColumnName="WebsiteID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permissions">
+            <EntityTypeMapping TypeName="AMSModel.Permission">
+              <MappingFragment StoreEntitySet="Permissions">
+                <ScalarProperty Name="ReadOnly" ColumnName="ReadOnly" />
+                <ScalarProperty Name="Changeable" ColumnName="Changeable" />
+                <ScalarProperty Name="FullControl" ColumnName="FullControl" />
+                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+                <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="AMSModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Templates">
+            <EntityTypeMapping TypeName="AMSModel.Template">
+              <MappingFragment StoreEntitySet="Templates">
+                <ScalarProperty Name="TemplateContent" ColumnName="TemplateContent" />
+                <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserInRoles">
+            <EntityTypeMapping TypeName="AMSModel.UserInRole">
+              <MappingFragment StoreEntitySet="UserInRoles">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Websites">
+            <EntityTypeMapping TypeName="AMSModel.Website">
+              <MappingFragment StoreEntitySet="Websites">
+                <ScalarProperty Name="WebsiteUrl" ColumnName="WebsiteUrl" />
+                <ScalarProperty Name="WebsiteName" ColumnName="WebsiteName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zones">
+            <EntityTypeMapping TypeName="AMSModel.Zone">
+              <MappingFragment StoreEntitySet="Zones">
+                <ScalarProperty Name="ContainerID" ColumnName="ContainerID" />
+                <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+                <ScalarProperty Name="PageID" ColumnName="PageID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="AMSModel">
+        <EntityTypeShape EntityType="AMSModel.Account" Width="1.5" PointX="0.75" PointY="0.75" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="AMSModel.BannerInZone" Width="1.5" PointX="2.75" PointY="0.75" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="AMSModel.Banner" Width="1.5" PointX="0.75" PointY="3.75" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="AMSModel.Campaign" Width="1.5" PointX="2.75" PointY="3.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="AMSModel.Module" Width="1.5" PointX="4.75" PointY="0.75" Height="2.7494921875000031" />
+        <EntityTypeShape EntityType="AMSModel.Page" Width="1.5" PointX="4.75" PointY="4.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="AMSModel.Permission" Width="1.5" PointX="6.75" PointY="0.75" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="AMSModel.Role" Width="1.5" PointX="0.75" PointY="6.75" Height="1.4033821614583388" />
+        <EntityTypeShape EntityType="AMSModel.Template" Width="1.5" PointX="6.75" PointY="3.75" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="AMSModel.UserInRole" Width="1.5" PointX="6.75" PointY="6.75" Height="1.4033821614583282" />
+        <EntityTypeShape EntityType="AMSModel.Website" Width="1.5" PointX="2.75" PointY="7.75" Height="1.5956835937500102" />
+        <EntityTypeShape EntityType="AMSModel.Zone" Width="1.5" PointX="8.75" PointY="0.75" Height="2.3648893229166674" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
