@@ -145,6 +145,8 @@
       <DependentUpon>AMSModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\LogOnModel.cs" />
+    <Compile Include="Models\Repositories\BaseRepository.cs" />
+    <Compile Include="Models\Repositories\IBaseRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Account\App_LocalResources\LogOn.Designer.cs">
       <AutoGen>True</AutoGen>
