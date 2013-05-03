@@ -29,6 +29,8 @@
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
           <Property Name="Password" Type="nvarchar" MaxLength="100" />
           <Property Name="OTP" Type="nvarchar" MaxLength="100" />
+          <Property Name="OTPExp" Type="datetime" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="BannerInZones">
           <Key>
@@ -41,6 +43,7 @@
           <Property Name="CampaignID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="StartDateTime" Type="datetime" />
           <Property Name="EndDateTime" Type="datetime" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="Banners">
           <Key>
@@ -49,6 +52,7 @@
           <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="BannerName" Type="nvarchar" MaxLength="100" />
           <Property Name="BannerUrl" Type="nvarchar(max)" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="Campaigns">
           <Key>
@@ -58,6 +62,7 @@
           <Property Name="CampaignName" Type="nvarchar" MaxLength="100" />
           <Property Name="StartDateTime" Type="datetime" />
           <Property Name="EndDateTime" Type="datetime" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="Modules">
           <Key>
@@ -72,6 +77,7 @@
           <Property Name="ModuleType" Type="int" />
           <Property Name="ShowInMenu" Type="bit" />
           <Property Name="SortIndex" Type="int" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="Pages">
           <Key>
@@ -81,6 +87,7 @@
           <Property Name="WebsiteID" Type="uniqueidentifier" />
           <Property Name="PageName" Type="nvarchar" MaxLength="100" />
           <Property Name="PageUrl" Type="nvarchar(max)" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="Permissions">
           <Key>
@@ -94,6 +101,7 @@
           <Property Name="FullControl" Type="bit" />
           <Property Name="Changeable" Type="bit" />
           <Property Name="ReadOnly" Type="bit" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -101,6 +109,7 @@
           </Key>
           <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="RoleName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="Templates">
           <Key>
@@ -109,6 +118,7 @@
           <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="TemplateName" Type="nvarchar" MaxLength="100" />
           <Property Name="TemplateContent" Type="nvarchar(max)" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="UserInRoles">
           <Key>
@@ -117,6 +127,7 @@
           </Key>
           <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="RoleID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="Websites">
           <Key>
@@ -125,6 +136,7 @@
           <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="WebsiteName" Type="nvarchar" MaxLength="100" />
           <Property Name="WebsiteUrl" Type="nvarchar(max)" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="Zones">
           <Key>
@@ -137,6 +149,7 @@
           <Property Name="Height" Type="float" />
           <Property Name="TemplateID" Type="uniqueidentifier" />
           <Property Name="ContainerID" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="int" />
         </EntityType>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -166,6 +179,8 @@
           <Property Type="String" Name="Email" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Password" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="OTP" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="OTPExp" />
+          <Property Type="Int32" Name="Status" />
         </EntityType>
         <EntityType Name="BannerInZone">
           <Key>
@@ -178,6 +193,7 @@
           <Property Type="Guid" Name="CampaignID" Nullable="false" />
           <Property Type="DateTime" Name="StartDateTime" />
           <Property Type="DateTime" Name="EndDateTime" />
+          <Property Type="Int32" Name="Status" />
         </EntityType>
         <EntityType Name="Banner">
           <Key>
@@ -186,6 +202,7 @@
           <Property Type="Guid" Name="ID" Nullable="false" />
           <Property Type="String" Name="BannerName" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="BannerUrl" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Status" />
         </EntityType>
         <EntityType Name="Campaign">
           <Key>
@@ -195,6 +212,7 @@
           <Property Type="String" Name="CampaignName" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="StartDateTime" />
           <Property Type="DateTime" Name="EndDateTime" />
+          <Property Type="Int32" Name="Status" />
         </EntityType>
         <EntityType Name="Module">
           <Key>
@@ -209,6 +227,7 @@
           <Property Type="Int32" Name="ModuleType" />
           <Property Type="Boolean" Name="ShowInMenu" />
           <Property Type="Int32" Name="SortIndex" />
+          <Property Type="Int32" Name="Status" />
         </EntityType>
         <EntityType Name="Page">
           <Key>
@@ -218,6 +237,7 @@
           <Property Type="Guid" Name="WebsiteID" />
           <Property Type="String" Name="PageName" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="PageUrl" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Status" />
         </EntityType>
         <EntityType Name="Permission">
           <Key>
@@ -231,6 +251,7 @@
           <Property Type="Boolean" Name="FullControl" />
           <Property Type="Boolean" Name="Changeable" />
           <Property Type="Boolean" Name="ReadOnly" />
+          <Property Type="Int32" Name="Status" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -238,6 +259,7 @@
           </Key>
           <Property Type="Guid" Name="ID" Nullable="false" />
           <Property Type="String" Name="RoleName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Status" />
         </EntityType>
         <EntityType Name="Template">
           <Key>
@@ -246,6 +268,7 @@
           <Property Type="Guid" Name="ID" Nullable="false" />
           <Property Type="String" Name="TemplateName" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="TemplateContent" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Status" />
         </EntityType>
         <EntityType Name="UserInRole">
           <Key>
@@ -254,6 +277,7 @@
           </Key>
           <Property Type="Guid" Name="UserID" Nullable="false" />
           <Property Type="Guid" Name="RoleID" Nullable="false" />
+          <Property Type="Int32" Name="Status" />
         </EntityType>
         <EntityType Name="Website">
           <Key>
@@ -262,6 +286,7 @@
           <Property Type="Guid" Name="ID" Nullable="false" />
           <Property Type="String" Name="WebsiteName" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="WebsiteUrl" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Status" />
         </EntityType>
         <EntityType Name="Zone">
           <Key>
@@ -274,6 +299,7 @@
           <Property Type="Double" Name="Height" />
           <Property Type="Guid" Name="TemplateID" />
           <Property Type="String" Name="ContainerID" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Status" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -284,6 +310,8 @@
           <EntitySetMapping Name="Accounts">
             <EntityTypeMapping TypeName="AMSModel.Account">
               <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="OTPExp" ColumnName="OTPExp" />
                 <ScalarProperty Name="OTP" ColumnName="OTP" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
@@ -296,6 +324,7 @@
           <EntitySetMapping Name="BannerInZones">
             <EntityTypeMapping TypeName="AMSModel.BannerInZone">
               <MappingFragment StoreEntitySet="BannerInZones">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
                 <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
                 <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
@@ -307,6 +336,7 @@
           <EntitySetMapping Name="Banners">
             <EntityTypeMapping TypeName="AMSModel.Banner">
               <MappingFragment StoreEntitySet="Banners">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="BannerUrl" ColumnName="BannerUrl" />
                 <ScalarProperty Name="BannerName" ColumnName="BannerName" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -316,6 +346,7 @@
           <EntitySetMapping Name="Campaigns">
             <EntityTypeMapping TypeName="AMSModel.Campaign">
               <MappingFragment StoreEntitySet="Campaigns">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
                 <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
                 <ScalarProperty Name="CampaignName" ColumnName="CampaignName" />
@@ -326,6 +357,7 @@
           <EntitySetMapping Name="Modules">
             <EntityTypeMapping TypeName="AMSModel.Module">
               <MappingFragment StoreEntitySet="Modules">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
                 <ScalarProperty Name="ShowInMenu" ColumnName="ShowInMenu" />
                 <ScalarProperty Name="ModuleType" ColumnName="ModuleType" />
@@ -341,6 +373,7 @@
           <EntitySetMapping Name="Pages">
             <EntityTypeMapping TypeName="AMSModel.Page">
               <MappingFragment StoreEntitySet="Pages">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="PageUrl" ColumnName="PageUrl" />
                 <ScalarProperty Name="PageName" ColumnName="PageName" />
                 <ScalarProperty Name="WebsiteID" ColumnName="WebsiteID" />
@@ -351,6 +384,7 @@
           <EntitySetMapping Name="Permissions">
             <EntityTypeMapping TypeName="AMSModel.Permission">
               <MappingFragment StoreEntitySet="Permissions">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="ReadOnly" ColumnName="ReadOnly" />
                 <ScalarProperty Name="Changeable" ColumnName="Changeable" />
                 <ScalarProperty Name="FullControl" ColumnName="FullControl" />
@@ -363,6 +397,7 @@
           <EntitySetMapping Name="Roles">
             <EntityTypeMapping TypeName="AMSModel.Role">
               <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="RoleName" ColumnName="RoleName" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
@@ -371,6 +406,7 @@
           <EntitySetMapping Name="Templates">
             <EntityTypeMapping TypeName="AMSModel.Template">
               <MappingFragment StoreEntitySet="Templates">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="TemplateContent" ColumnName="TemplateContent" />
                 <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -380,6 +416,7 @@
           <EntitySetMapping Name="UserInRoles">
             <EntityTypeMapping TypeName="AMSModel.UserInRole">
               <MappingFragment StoreEntitySet="UserInRoles">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="RoleID" ColumnName="RoleID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
               </MappingFragment>
@@ -388,6 +425,7 @@
           <EntitySetMapping Name="Websites">
             <EntityTypeMapping TypeName="AMSModel.Website">
               <MappingFragment StoreEntitySet="Websites">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="WebsiteUrl" ColumnName="WebsiteUrl" />
                 <ScalarProperty Name="WebsiteName" ColumnName="WebsiteName" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -397,6 +435,7 @@
           <EntitySetMapping Name="Zones">
             <EntityTypeMapping TypeName="AMSModel.Zone">
               <MappingFragment StoreEntitySet="Zones">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="ContainerID" ColumnName="ContainerID" />
                 <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
                 <ScalarProperty Name="Height" ColumnName="Height" />
@@ -428,18 +467,18 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="AMSModel">
-        <EntityTypeShape EntityType="AMSModel.Account" Width="1.5" PointX="0.75" PointY="0.75" Height="2.1725878906250031" />
-        <EntityTypeShape EntityType="AMSModel.BannerInZone" Width="1.5" PointX="2.75" PointY="0.75" Height="1.9802864583333388" />
-        <EntityTypeShape EntityType="AMSModel.Banner" Width="1.5" PointX="0.75" PointY="3.75" Height="1.5956835937500031" />
-        <EntityTypeShape EntityType="AMSModel.Campaign" Width="1.5" PointX="2.75" PointY="3.75" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="AMSModel.Module" Width="1.5" PointX="4.75" PointY="0.75" Height="2.7494921875000031" />
-        <EntityTypeShape EntityType="AMSModel.Page" Width="1.5" PointX="4.75" PointY="4.75" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="AMSModel.Permission" Width="1.5" PointX="6.75" PointY="0.75" Height="2.1725878906250031" />
-        <EntityTypeShape EntityType="AMSModel.Role" Width="1.5" PointX="0.75" PointY="6.75" Height="1.4033821614583388" />
-        <EntityTypeShape EntityType="AMSModel.Template" Width="1.5" PointX="6.75" PointY="3.75" Height="1.5956835937500031" />
-        <EntityTypeShape EntityType="AMSModel.UserInRole" Width="1.5" PointX="6.75" PointY="6.75" Height="1.4033821614583282" />
-        <EntityTypeShape EntityType="AMSModel.Website" Width="1.5" PointX="2.75" PointY="7.75" Height="1.5956835937500102" />
-        <EntityTypeShape EntityType="AMSModel.Zone" Width="1.5" PointX="8.75" PointY="0.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="AMSModel.Account" Width="1.5" PointX="0.75" PointY="0.75" Height="2.2496956380208388" />
+        <EntityTypeShape EntityType="AMSModel.BannerInZone" Width="1.5" PointX="2.75" PointY="0.75" Height="1.9210009765625031" />
+        <EntityTypeShape EntityType="AMSModel.Banner" Width="1.5" PointX="0.75" PointY="3.75" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="AMSModel.Campaign" Width="1.5" PointX="2.75" PointY="3.75" Height="1.7566536458333388" />
+        <EntityTypeShape EntityType="AMSModel.Module" Width="1.5" PointX="4.75" PointY="0.75" Height="2.5783902994791674" />
+        <EntityTypeShape EntityType="AMSModel.Page" Width="1.5" PointX="4.75" PointY="4.75" Height="1.7566536458333388" />
+        <EntityTypeShape EntityType="AMSModel.Permission" Width="1.5" PointX="6.75" PointY="0.75" Height="2.0853483072916674" />
+        <EntityTypeShape EntityType="AMSModel.Role" Width="1.5" PointX="0.75" PointY="6.75" Height="1.4279589843750031" />
+        <EntityTypeShape EntityType="AMSModel.Template" Width="1.5" PointX="6.75" PointY="3.75" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="AMSModel.UserInRole" Width="1.5" PointX="6.75" PointY="6.75" Height="1.4279589843750067" />
+        <EntityTypeShape EntityType="AMSModel.Website" Width="1.5" PointX="2.75" PointY="7.75" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="AMSModel.Zone" Width="1.5" PointX="8.75" PointY="0.75" Height="2.2496956380208246" />
       </Diagram>
     </Diagrams>
   </Designer>

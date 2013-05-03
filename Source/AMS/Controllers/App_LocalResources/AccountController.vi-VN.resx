@@ -117,13 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Link_LogOff_Text" xml:space="preserve">
-    <value>Đăng xuất</value>
-  </data>
-  <data name="Link_LogOn_Text" xml:space="preserve">
-    <value>Đăng nhập</value>
-  </data>
-  <data name="Message_Hello" xml:space="preserve">
-    <value>Xin chào</value>
+  <data name="WrongUserNameOrPassword" xml:space="preserve">
+    <value>Tài khoản hoặc mật khẩu vừa cung cấp không chính xác.</value>
   </data>
 </root>

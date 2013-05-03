@@ -1,5 +1,18 @@
 ﻿@using AMS.Views.Shared.App_LocalResources
-
-[ 
-@Html.ActionLink(LogOnPartial.Page_LogOn, "LogOn", "Account")
-]
+@if (Request.IsAuthenticated)
+{
+    <text> <b>@LogOnPartial.Message_Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account")!</b>
+    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logOffForm", style = "display:inline;" }))
+    {
+        @Html.AntiForgeryToken()
+        <i>[ <a href="javascript:document.getElementById('logOffForm').submit()">@LogOnPartial.Link_LogOff_Text</a>
+            ]</i>
+    }
+    </text>
+}
+else
+{
+    <i>[ @Html.ActionLink(LogOnPartial.Link_LogOn_Text, "LogOn", "Account") ]</i>
+}
+<i>[ @Html.ActionLink("Tiếng Việt", "ChangeCulture", "Shared", new { lang = "vi-VN", returnUrl = this.Request.RawUrl }, null)
+    | @Html.ActionLink("English", "ChangeCulture", "Shared", new { lang = "en-US", returnUrl = this.Request.RawUrl }, null) ]</i>

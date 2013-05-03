@@ -8,15 +8,15 @@
 //------------------------------------------------------------------------------
 
 using System;
-using System.ComponentModel;
-using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Linq;
-using System.Runtime.Serialization;
+using System.Data.EntityClient;
+using System.ComponentModel;
 using System.Xml.Serialization;
+using System.Runtime.Serialization;
 
 [assembly: EdmSchemaAttribute()]
+
 namespace AMS.Models.Entities
 {
     #region Contexts
@@ -258,7 +258,6 @@ namespace AMS.Models.Entities
         private ObjectSet<Zone> _Zones;
 
         #endregion
-
         #region AddTo Methods
     
         /// <summary>
@@ -358,11 +357,11 @@ namespace AMS.Models.Entities
         }
 
         #endregion
-
     }
+    
 
     #endregion
-
+    
     #region Entities
     
     /// <summary>
@@ -387,7 +386,6 @@ namespace AMS.Models.Entities
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -536,9 +534,56 @@ namespace AMS.Models.Entities
         private global::System.String _OTP;
         partial void OnOTPChanging(global::System.String value);
         partial void OnOTPChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> OTPExp
+        {
+            get
+            {
+                return _OTPExp;
+            }
+            set
+            {
+                OnOTPExpChanging(value);
+                ReportPropertyChanging("OTPExp");
+                _OTPExp = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("OTPExp");
+                OnOTPExpChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _OTPExp;
+        partial void OnOTPExpChanging(Nullable<global::System.DateTime> value);
+        partial void OnOTPExpChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Status;
+        partial void OnStatusChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusChanged();
 
         #endregion
-
     
     }
     
@@ -564,7 +609,6 @@ namespace AMS.Models.Entities
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -641,9 +685,32 @@ namespace AMS.Models.Entities
         private global::System.String _BannerUrl;
         partial void OnBannerUrlChanging(global::System.String value);
         partial void OnBannerUrlChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Status;
+        partial void OnStatusChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusChanged();
 
         #endregion
-
     
     }
     
@@ -673,7 +740,6 @@ namespace AMS.Models.Entities
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -804,9 +870,32 @@ namespace AMS.Models.Entities
         private Nullable<global::System.DateTime> _EndDateTime;
         partial void OnEndDateTimeChanging(Nullable<global::System.DateTime> value);
         partial void OnEndDateTimeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Status;
+        partial void OnStatusChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusChanged();
 
         #endregion
-
     
     }
     
@@ -832,7 +921,6 @@ namespace AMS.Models.Entities
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -933,9 +1021,32 @@ namespace AMS.Models.Entities
         private Nullable<global::System.DateTime> _EndDateTime;
         partial void OnEndDateTimeChanging(Nullable<global::System.DateTime> value);
         partial void OnEndDateTimeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Status;
+        partial void OnStatusChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusChanged();
 
         #endregion
-
     
     }
     
@@ -961,7 +1072,6 @@ namespace AMS.Models.Entities
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -1182,9 +1292,32 @@ namespace AMS.Models.Entities
         private Nullable<global::System.Int32> _SortIndex;
         partial void OnSortIndexChanging(Nullable<global::System.Int32> value);
         partial void OnSortIndexChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Status;
+        partial void OnStatusChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusChanged();
 
         #endregion
-
     
     }
     
@@ -1210,7 +1343,6 @@ namespace AMS.Models.Entities
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -1311,9 +1443,32 @@ namespace AMS.Models.Entities
         private global::System.String _PageUrl;
         partial void OnPageUrlChanging(global::System.String value);
         partial void OnPageUrlChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Status;
+        partial void OnStatusChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusChanged();
 
         #endregion
-
     
     }
     
@@ -1343,7 +1498,6 @@ namespace AMS.Models.Entities
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -1498,9 +1652,32 @@ namespace AMS.Models.Entities
         private Nullable<global::System.Boolean> _ReadOnly;
         partial void OnReadOnlyChanging(Nullable<global::System.Boolean> value);
         partial void OnReadOnlyChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Status;
+        partial void OnStatusChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusChanged();
 
         #endregion
-
     
     }
     
@@ -1526,7 +1703,6 @@ namespace AMS.Models.Entities
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -1579,9 +1755,32 @@ namespace AMS.Models.Entities
         private global::System.String _RoleName;
         partial void OnRoleNameChanging(global::System.String value);
         partial void OnRoleNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Status;
+        partial void OnStatusChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusChanged();
 
         #endregion
-
     
     }
     
@@ -1607,7 +1806,6 @@ namespace AMS.Models.Entities
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -1684,9 +1882,32 @@ namespace AMS.Models.Entities
         private global::System.String _TemplateContent;
         partial void OnTemplateContentChanging(global::System.String value);
         partial void OnTemplateContentChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Status;
+        partial void OnStatusChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusChanged();
 
         #endregion
-
     
     }
     
@@ -1714,7 +1935,6 @@ namespace AMS.Models.Entities
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -1770,9 +1990,32 @@ namespace AMS.Models.Entities
         private global::System.Guid _RoleID;
         partial void OnRoleIDChanging(global::System.Guid value);
         partial void OnRoleIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Status;
+        partial void OnStatusChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusChanged();
 
         #endregion
-
     
     }
     
@@ -1798,7 +2041,6 @@ namespace AMS.Models.Entities
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -1875,9 +2117,32 @@ namespace AMS.Models.Entities
         private global::System.String _WebsiteUrl;
         partial void OnWebsiteUrlChanging(global::System.String value);
         partial void OnWebsiteUrlChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Status;
+        partial void OnStatusChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusChanged();
 
         #endregion
-
     
     }
     
@@ -1903,7 +2168,6 @@ namespace AMS.Models.Entities
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -2076,13 +2340,35 @@ namespace AMS.Models.Entities
         private global::System.String _ContainerID;
         partial void OnContainerIDChanging(global::System.String value);
         partial void OnContainerIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Status;
+        partial void OnStatusChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusChanged();
 
         #endregion
-
     
     }
 
     #endregion
-
     
 }

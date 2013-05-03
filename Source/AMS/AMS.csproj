@@ -120,10 +120,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Messages.vi-VN.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.vi-VN.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\App_LocalResources\AccountController.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountController.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\App_LocalResources\AccountController.vi-VN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountController.vi-VN.resx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -134,19 +154,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\App_LocalResources\LogOn.Designer.cs">
+    <Compile Include="Models\ViewModels\App_LocalResources\LogOnModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LogOn.resx</DependentUpon>
+      <DependentUpon>LogOnModel.resx</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\AMSModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AMSModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\LogOnModel.cs" />
-    <Compile Include="Models\Repositories\BaseRepository.cs" />
-    <Compile Include="Models\Repositories\IBaseRepository.cs" />
+    <Compile Include="Models\ViewModels\LogOnModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Account\App_LocalResources\LogOn.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -242,6 +260,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Views\Account\LogOn.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -256,6 +277,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Files\Banners\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
@@ -266,11 +288,27 @@
     <Content Include="Views\Shared\_LogOnPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Models\App_LocalResources\LogOn.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>LogOn.Designer.cs</LastGenOutput>
+    <EmbeddedResource Include="App_GlobalResources\Messages.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Models\App_LocalResources\LogOn.vi-VN.resx" />
+    <EmbeddedResource Include="App_GlobalResources\Messages.vi-VN.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Messages.vi-VN.designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\App_LocalResources\AccountController.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountController.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\App_LocalResources\AccountController.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountController.vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\ViewModels\App_LocalResources\LogOnModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogOnModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\ViewModels\App_LocalResources\LogOnModel.vi-VN.resx" />
     <EmbeddedResource Include="Views\Account\App_LocalResources\LogOn.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LogOn.Designer.cs</LastGenOutput>
@@ -318,13 +356,19 @@
     <Content Include="Views\Shared\_LanguagePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Account\LogOn.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <EntityDeploy Include="Models\Entities\AMSModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>AMSModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Manage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\ForgetPassword.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

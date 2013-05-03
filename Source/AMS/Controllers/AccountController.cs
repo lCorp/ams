@@ -3,12 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using AMS.Models;
+using AMS.Models.ViewModels;
+using System.Web.Security;
+using AMS.Models.Entities;
 
 namespace AMS.Controllers
 {
-    public class AccountController : Controller
+    [Authorize]
+    public class AccountController : Controller, IDisposable
     {
+        private static string EncryptPassword(string password)
+        {
+            return FormsAuthentication.HashPasswordForStoringInConfigFile(password, "SHA1");
+        }
+
+        private AMSEntities _context;
+
+        public AccountController()
+        {
+            this._context = new AMSEntities();
+        }
+
+        private ActionResult RedirectToLocalUrl(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
         //
         // GET: /Account/LogOn
         [AllowAnonymous]
@@ -21,12 +48,53 @@ namespace AMS.Controllers
         //
         // POST: /Account/LogOn
         [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult LogOn(LogOnModel model, string returnUrl)
         {
+            if (ModelState.IsValid)
+            {
+                string encryptedPassword = EncryptPassword(model.Password);
+                if (this._context.Accounts.Count(i => i.UserName == model.UserName && i.Password == encryptedPassword && i.Status == 0) == 1)
+                {
+                    FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+                    return RedirectToLocalUrl(returnUrl);
+                }
+            }
             // If we got this far, something failed, redisplay form
-            ViewBag.ReturnUrl = returnUrl;
+            ModelState.AddModelError("", App_LocalResources.AccountController.WrongUserNameOrPassword);
             return View(model);
+        }
+
+        //
+        // POST: /Account/LogOff
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LogOff()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult Manage()
+        {
+            return View();
+        }
+
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+
+        public ActionResult ForgetPassword()
+        {
+            return View();
+        }
+
+        void IDisposable.Dispose()
+        {
+            this._context.Dispose();
+            base.Dispose();
         }
     }
 }

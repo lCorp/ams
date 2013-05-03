@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AMS.Views.Shared.App_LocalResources {
+namespace AMS.Controllers.App_LocalResources {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace AMS.Views.Shared.App_LocalResources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class LogOnPartial {
+    public class AccountController {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal LogOnPartial() {
+        internal AccountController() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace AMS.Views.Shared.App_LocalResources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AMS.Views.Shared.App_LocalResources.LogOnPartial", typeof(LogOnPartial).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AMS.Controllers.App_LocalResources.AccountController", typeof(AccountController).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,29 +61,11 @@ namespace AMS.Views.Shared.App_LocalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Log off.
+        ///   Looks up a localized string similar to The user name or password provided is incorrect..
         /// </summary>
-        public static string Link_LogOff_Text {
+        public static string WrongUserNameOrPassword {
             get {
-                return ResourceManager.GetString("Link_LogOff_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Log on.
-        /// </summary>
-        public static string Link_LogOn_Text {
-            get {
-                return ResourceManager.GetString("Link_LogOn_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hello.
-        /// </summary>
-        public static string Message_Hello {
-            get {
-                return ResourceManager.GetString("Message_Hello", resourceCulture);
+                return ResourceManager.GetString("WrongUserNameOrPassword", resourceCulture);
             }
         }
     }
