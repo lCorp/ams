@@ -1,5 +1,5 @@
 ﻿@using AMS.Views.Home.App_LocalResources
-@using AMS.Controllers
+@using AMS.Libraries
 
 @{
     ViewBag.Title = About.Page_Title;
@@ -9,7 +9,7 @@
 <p>
      @MvcHtmlString.Create(About.Message_Introduction)
      <ul>
-        <li>@About.Message_Version @SharedController.GetSetting("Version").</li>
-        <li>@About.Message_Copyright &copy @SharedController.GetSetting("CopyrightYear").</li>
+        <li>@About.Message_Version @Configuration.GetSetting("Version").</li>
+        <li>@About.Message_Copyright &copy @Configuration.GetSetting("CopyrightYear").</li>
      </ul>
 </p>

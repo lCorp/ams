@@ -154,6 +154,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Libraries\AccountType.cs" />
+    <Compile Include="Libraries\Configuration.cs" />
+    <Compile Include="Libraries\Cryptography.cs" />
+    <Compile Include="Libraries\EntityStatus.cs" />
+    <Compile Include="Libraries\ModuleAuthorizeAttribute.cs" />
+    <Compile Include="Libraries\ModuleType.cs" />
+    <Compile Include="Libraries\myLibrary.cs" />
     <Compile Include="Models\ViewModels\App_LocalResources\LogOnModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -369,6 +376,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\ForgetPassword.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

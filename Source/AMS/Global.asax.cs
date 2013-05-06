@@ -9,6 +9,7 @@ using System.Web.Routing;
 using System.Globalization;
 using System.Threading;
 using AMS.Controllers;
+using AMS.Libraries;
 
 namespace AMS
 {
@@ -47,7 +48,7 @@ namespace AMS
                 if (ci == null)
                 {
                     //Sets default culture from web config
-                    string langName = SharedController.GetSetting("DefaultCulture");
+                    string langName = Configuration.GetSetting("DefaultCulture");
 
                     //Try to get values from Accept lang HTTP header
                     if (HttpContext.Current.Request.UserLanguages != null && HttpContext.Current.Request.UserLanguages.Length != 0)

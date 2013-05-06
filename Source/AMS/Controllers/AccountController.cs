@@ -6,22 +6,18 @@ using System.Web.Mvc;
 using AMS.Models.ViewModels;
 using System.Web.Security;
 using AMS.Models.Entities;
+using AMS.Libraries;
 
 namespace AMS.Controllers
 {
-    [Authorize]
+    [ModuleAuthorize]
     public class AccountController : Controller, IDisposable
     {
-        private static string EncryptPassword(string password)
-        {
-            return FormsAuthentication.HashPasswordForStoringInConfigFile(password, "SHA1");
-        }
-
-        private AMSEntities _context;
+        private AMSEntities context;
 
         public AccountController()
         {
-            this._context = new AMSEntities();
+            this.context = new AMSEntities();
         }
 
         private ActionResult RedirectToLocalUrl(string returnUrl)
@@ -38,7 +34,6 @@ namespace AMS.Controllers
 
         //
         // GET: /Account/LogOn
-        [AllowAnonymous]
         public ActionResult LogOn(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
@@ -47,15 +42,14 @@ namespace AMS.Controllers
 
         //
         // POST: /Account/LogOn
-        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult LogOn(LogOnModel model, string returnUrl)
         {
             if (ModelState.IsValid)
             {
-                string encryptedPassword = EncryptPassword(model.Password);
-                if (this._context.Accounts.Count(i => i.UserName == model.UserName && i.Password == encryptedPassword && i.Status == 0) == 1)
+                string encryptedPassword = Cryptography.EncryptPassword(model.Password);
+                if (this.context.Accounts.Count(i => i.UserName == model.UserName && i.Password == encryptedPassword && EntityStatus.Active.Equals(i.Status)) == 1)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                     return RedirectToLocalUrl(returnUrl);
@@ -76,6 +70,30 @@ namespace AMS.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public ActionResult Register(string returnUrl)
+        {
+            ViewBag.ReturnUrl = returnUrl;
+            return View();
+        }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult Register(LogOnModel model, string returnUrl)
+        {
+            if (ModelState.IsValid)
+            {
+                string encryptedPassword = Cryptography.EncryptPassword(model.Password);
+                if (this.context.Accounts.Count(i => i.UserName == model.UserName && i.Password == encryptedPassword && i.Status == 0) == 1)
+                {
+                    FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+                    return RedirectToLocalUrl(returnUrl);
+                }
+            }
+            // If we got this far, something failed, redisplay form
+            ModelState.AddModelError("", App_LocalResources.AccountController.WrongUserNameOrPassword);
+            return View(model);
+        }
+
         public ActionResult Manage()
         {
             return View();
@@ -93,7 +111,7 @@ namespace AMS.Controllers
 
         void IDisposable.Dispose()
         {
-            this._context.Dispose();
+            this.context.Dispose();
             base.Dispose();
         }
     }

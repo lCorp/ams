@@ -1,10 +1,10 @@
-﻿@using AMS.Controllers
+﻿@using AMS.Libraries
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>@SharedController.GetSetting("WebsiteName") | @ViewBag.Title</title>
+    <title>@Configuration.GetSetting("WebsiteName") | @ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -12,7 +12,7 @@
     <div class="page">
         <header>
             <div id="title">
-                <h1>@SharedController.GetSetting("WebsiteName")</h1>
+                <h1>@Configuration.GetSetting("WebsiteName")</h1>
             </div>
             <div id="logindisplay">
                 @Html.Partial("_LogOnPartial")

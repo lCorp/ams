@@ -34,19 +34,5 @@ namespace AMS.Controllers
         }
 
         #endregion
-
-        #region Static methods
-
-        /// <summary>
-        /// Get app setting value by key in web.config
-        /// </summary>
-        /// <param name="key"></param>
-        /// <returns></returns>
-        public static string GetSetting(string key)
-        {
-            return ConfigurationManager.AppSettings[key];
-        }
-
-        #endregion
     }
 }
