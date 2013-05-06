@@ -108,6 +108,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleCode" Type="nvarchar" MaxLength="100" />
           <Property Name="RoleName" Type="nvarchar" MaxLength="100" />
           <Property Name="Status" Type="int" />
         </EntityType>
@@ -258,6 +259,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="RoleCode" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="RoleName" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="Status" />
         </EntityType>
@@ -399,6 +401,7 @@
               <MappingFragment StoreEntitySet="Roles">
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleCode" ColumnName="RoleCode" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -474,7 +477,7 @@
         <EntityTypeShape EntityType="AMSModel.Module" Width="1.5" PointX="4.75" PointY="0.75" Height="2.5783902994791674" />
         <EntityTypeShape EntityType="AMSModel.Page" Width="1.5" PointX="4.75" PointY="4.75" Height="1.7566536458333388" />
         <EntityTypeShape EntityType="AMSModel.Permission" Width="1.5" PointX="6.75" PointY="0.75" Height="2.0853483072916674" />
-        <EntityTypeShape EntityType="AMSModel.Role" Width="1.5" PointX="0.75" PointY="6.75" Height="1.4279589843750031" />
+        <EntityTypeShape EntityType="AMSModel.Role" Width="1.5" PointX="0.75" PointY="6.75" Height="1.5923063151041674" />
         <EntityTypeShape EntityType="AMSModel.Template" Width="1.5" PointX="6.75" PointY="3.75" Height="1.5923063151041674" />
         <EntityTypeShape EntityType="AMSModel.UserInRole" Width="1.5" PointX="6.75" PointY="6.75" Height="1.4279589843750067" />
         <EntityTypeShape EntityType="AMSModel.Website" Width="1.5" PointX="2.75" PointY="7.75" Height="1.5923063151041674" />

@@ -1737,6 +1737,30 @@ namespace AMS.Models.Entities
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
+        public global::System.String RoleCode
+        {
+            get
+            {
+                return _RoleCode;
+            }
+            set
+            {
+                OnRoleCodeChanging(value);
+                ReportPropertyChanging("RoleCode");
+                _RoleCode = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("RoleCode");
+                OnRoleCodeChanged();
+            }
+        }
+        private global::System.String _RoleCode;
+        partial void OnRoleCodeChanging(global::System.String value);
+        partial void OnRoleCodeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String RoleName
         {
             get
