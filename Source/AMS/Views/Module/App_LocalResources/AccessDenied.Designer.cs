@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AMS.App_GlobalResources {
+namespace AMS.Views.Module.App_LocalResources {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace AMS.App_GlobalResources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Messages {
+    public class AccessDenied {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Messages() {
+        internal AccessDenied() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace AMS.App_GlobalResources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AMS.App_GlobalResources.Messages", typeof(Messages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AMS.Views.Module.App_LocalResources.AccessDenied", typeof(AccessDenied).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,24 @@ namespace AMS.App_GlobalResources {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You don&apos;t have permission to access this module..
+        /// </summary>
+        public static string Message_AccessDenied {
+            get {
+                return ResourceManager.GetString("Message_AccessDenied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Access denied.
+        /// </summary>
+        public static string Page_Title {
+            get {
+                return ResourceManager.GetString("Page_Title", resourceCulture);
             }
         }
     }

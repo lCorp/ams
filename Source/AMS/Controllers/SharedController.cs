@@ -5,9 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using System.Configuration;
 using System.Globalization;
+using AMS.Libraries;
 
 namespace AMS.Controllers
 {
+    [ModuleAuthorize]
     public class SharedController : Controller
     {
         #region Instance methods
@@ -17,6 +19,11 @@ namespace AMS.Controllers
         /// </summary>
         /// <returns></returns>
         public ActionResult Error()
+        {
+            return View();
+        }
+
+        public ActionResult PageNotFound()
         {
             return View();
         }

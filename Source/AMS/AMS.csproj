@@ -130,6 +130,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Messages.vi-VN.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_GlobalResources\Modules.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modules.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Modules.vi-VN.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modules.vi-VN.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -147,6 +157,7 @@
     <Compile Include="Controllers\HomeController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\APIs\ValuesController.cs">
       <SubType>Code</SubType>
@@ -203,6 +214,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.vi-VN.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Module\App_LocalResources\AccessDenied.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccessDenied.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Module\App_LocalResources\AccessDenied.vi-VN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccessDenied.vi-VN.resx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\App_LocalResources\Error.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -222,6 +243,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LogOnPartial.vi-VN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\App_LocalResources\PageNotFound.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PageNotFound.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\App_LocalResources\PageNotFound.vi-VN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PageNotFound.vi-VN.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -257,9 +288,11 @@
     <Content Include="Content\jqueryui\base\jquery.ui.slider.css" />
     <Content Include="Content\jqueryui\base\jquery.ui.tabs.css" />
     <Content Include="Content\jqueryui\base\jquery.ui.theme.css" />
+    <Content Include="Content\ams.css" />
     <Content Include="Content\metro\metro.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\banner-main-home-index.jpg" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
@@ -285,7 +318,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Files\Banners\" />
-    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -296,12 +328,20 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\Messages.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Messages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="App_GlobalResources\Messages.vi-VN.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Messages.vi-VN.designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Modules.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Modules.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Modules.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Modules.vi-VN.designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\App_LocalResources\AccountController.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -336,6 +376,14 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Module\App_LocalResources\AccessDenied.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccessDenied.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Module\App_LocalResources\AccessDenied.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccessDenied.vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\App_LocalResources\Error.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Error.Designer.cs</LastGenOutput>
@@ -352,15 +400,20 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LogOnPartial.vi-VN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\App_LocalResources\PageNotFound.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PageNotFound.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\App_LocalResources\PageNotFound.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PageNotFound.vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Home\App_LocalResources\Index.vi-VN.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.vi-VN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\_LanguagePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Models\Entities\AMSModel.edmx">
@@ -379,6 +432,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Module\AccessDenied.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Module\Access.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\PageNotFound.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

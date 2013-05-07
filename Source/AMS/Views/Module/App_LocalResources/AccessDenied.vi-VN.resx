@@ -117,19 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Message_Copyright" xml:space="preserve">
-    <value>Bản quyền </value>
-  </data>
-  <data name="Message_Introduction" xml:space="preserve">
-    <value>AMS &lt;i&gt;(viết tắt của &lt;u&gt;A&lt;/u&gt;dvertising &lt;u&gt;M&lt;/u&gt;anagement &lt;u&gt;S&lt;/u&gt;ystem)&lt;/i&gt; là một sản phẩm của &lt;a href="mailto:ngohuuloc@gmail.com" target="_blank"&gt;lCorp&lt;/a&gt;.</value>
-  </data>
-  <data name="Message_LicenseTo" xml:space="preserve">
-    <value>Bản quyền cấp cho</value>
-  </data>
-  <data name="Message_Version" xml:space="preserve">
-    <value>Phiên bản</value>
+  <data name="Message_AccessDenied" xml:space="preserve">
+    <value>Bạn không có đủ quyền để sử dụng chức năng này.</value>
   </data>
   <data name="Page_Title" xml:space="preserve">
-    <value>Giới thiệu</value>
+    <value>Lỗi truy cập</value>
   </data>
 </root>

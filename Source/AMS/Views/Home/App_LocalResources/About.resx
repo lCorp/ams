@@ -121,7 +121,10 @@
     <value>Copyright </value>
   </data>
   <data name="Message_Introduction" xml:space="preserve">
-    <value>AMS (stands for &lt;u&gt;A&lt;/u&gt;dvertising &lt;u&gt;M&lt;/u&gt;anagement &lt;u&gt;S&lt;/u&gt;ystem) is a product of &lt;a href="mailto:ngohuuloc@gmail.com" target="_blank"&gt;lCorp&lt;/a&gt;.</value>
+    <value>AMS &lt;i&gt;(stands for &lt;u&gt;A&lt;/u&gt;dvertising &lt;u&gt;M&lt;/u&gt;anagement &lt;u&gt;S&lt;/u&gt;ystem)&lt;/i&gt; is a product of &lt;a href="mailto:ngohuuloc@gmail.com" target="_blank"&gt;lCorp&lt;/a&gt;.</value>
+  </data>
+  <data name="Message_LicenseTo" xml:space="preserve">
+    <value>License to</value>
   </data>
   <data name="Message_Version" xml:space="preserve">
     <value>Version</value>

@@ -17,5 +17,10 @@ namespace AMS.Libraries
         {
             return ConfigurationManager.AppSettings[key];
         }
+
+        public static void SetSetting(string key, string value)
+        {
+            ConfigurationManager.AppSettings.Set(key, value);
+        }
     }
 }

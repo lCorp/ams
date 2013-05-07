@@ -49,7 +49,7 @@ namespace AMS.Controllers
             if (ModelState.IsValid)
             {
                 string encryptedPassword = Cryptography.EncryptPassword(model.Password);
-                if (this.context.Accounts.Count(i => i.UserName == model.UserName && i.Password == encryptedPassword && EntityStatus.Active.Equals(i.Status)) == 1)
+                if (this.context.Accounts.Count(i => i.UserName == model.UserName && i.Password == encryptedPassword && i.Status == (int)EntityStatus.Active) == 1)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                     return RedirectToLocalUrl(returnUrl);
@@ -83,7 +83,7 @@ namespace AMS.Controllers
             if (ModelState.IsValid)
             {
                 string encryptedPassword = Cryptography.EncryptPassword(model.Password);
-                if (this.context.Accounts.Count(i => i.UserName == model.UserName && i.Password == encryptedPassword && i.Status == 0) == 1)
+                if (this.context.Accounts.Count(i => i.UserName == model.UserName && i.Password == encryptedPassword && i.Status == (int)EntityStatus.Active) == 1)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                     return RedirectToLocalUrl(returnUrl);

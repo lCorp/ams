@@ -69,6 +69,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModuleCode" Type="nvarchar" MaxLength="100" />
           <Property Name="ParentID" Type="uniqueidentifier" />
           <Property Name="ControllerCode" Type="nvarchar" MaxLength="100" />
           <Property Name="ActionCode" Type="nvarchar" MaxLength="100" />
@@ -92,12 +93,12 @@
         <EntityType Name="Permissions">
           <Key>
             <PropertyRef Name="AccountID" />
-            <PropertyRef Name="ModuleID" />
             <PropertyRef Name="AccountType" />
+            <PropertyRef Name="ModuleID" />
           </Key>
           <Property Name="AccountID" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="ModuleID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="AccountType" Type="int" Nullable="false" />
+          <Property Name="ModuleID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="FullControl" Type="bit" />
           <Property Name="Changeable" Type="bit" />
           <Property Name="ReadOnly" Type="bit" />
@@ -220,6 +221,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="ModuleCode" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="Guid" Name="ParentID" />
           <Property Type="String" Name="ControllerCode" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="ActionCode" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -243,12 +245,12 @@
         <EntityType Name="Permission">
           <Key>
             <PropertyRef Name="AccountID" />
-            <PropertyRef Name="ModuleID" />
             <PropertyRef Name="AccountType" />
+            <PropertyRef Name="ModuleID" />
           </Key>
           <Property Type="Guid" Name="AccountID" Nullable="false" />
-          <Property Type="Guid" Name="ModuleID" Nullable="false" />
           <Property Type="Int32" Name="AccountType" Nullable="false" />
+          <Property Type="Guid" Name="ModuleID" Nullable="false" />
           <Property Type="Boolean" Name="FullControl" />
           <Property Type="Boolean" Name="Changeable" />
           <Property Type="Boolean" Name="ReadOnly" />
@@ -368,6 +370,7 @@
                 <ScalarProperty Name="ActionCode" ColumnName="ActionCode" />
                 <ScalarProperty Name="ControllerCode" ColumnName="ControllerCode" />
                 <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="ModuleCode" ColumnName="ModuleCode" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -390,8 +393,8 @@
                 <ScalarProperty Name="ReadOnly" ColumnName="ReadOnly" />
                 <ScalarProperty Name="Changeable" ColumnName="Changeable" />
                 <ScalarProperty Name="FullControl" ColumnName="FullControl" />
-                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
                 <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
                 <ScalarProperty Name="AccountID" ColumnName="AccountID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -474,7 +477,7 @@
         <EntityTypeShape EntityType="AMSModel.BannerInZone" Width="1.5" PointX="2.75" PointY="0.75" Height="1.9210009765625031" />
         <EntityTypeShape EntityType="AMSModel.Banner" Width="1.5" PointX="0.75" PointY="3.75" Height="1.5923063151041674" />
         <EntityTypeShape EntityType="AMSModel.Campaign" Width="1.5" PointX="2.75" PointY="3.75" Height="1.7566536458333388" />
-        <EntityTypeShape EntityType="AMSModel.Module" Width="1.5" PointX="4.75" PointY="0.75" Height="2.5783902994791674" />
+        <EntityTypeShape EntityType="AMSModel.Module" Width="1.5" PointX="4.75" PointY="0.75" Height="2.7427376302083388" />
         <EntityTypeShape EntityType="AMSModel.Page" Width="1.5" PointX="4.75" PointY="4.75" Height="1.7566536458333388" />
         <EntityTypeShape EntityType="AMSModel.Permission" Width="1.5" PointX="6.75" PointY="0.75" Height="2.0853483072916674" />
         <EntityTypeShape EntityType="AMSModel.Role" Width="1.5" PointX="0.75" PointY="6.75" Height="1.5923063151041674" />

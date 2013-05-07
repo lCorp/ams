@@ -79,7 +79,7 @@ namespace AMS.Views.Shared.App_LocalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hello.
+        ///   Looks up a localized string similar to Welcome.
         /// </summary>
         public static string Message_Hello {
             get {

@@ -1,5 +1,4 @@
 ﻿@using AMS.Views.Home.App_LocalResources
-@using AMS.Libraries
 
 @{
     ViewBag.Title = About.Page_Title;
@@ -12,4 +11,8 @@
         <li>@About.Message_Version @Configuration.GetSetting("Version").</li>
         <li>@About.Message_Copyright &copy @Configuration.GetSetting("CopyrightYear").</li>
      </ul>
+     @if (!string.IsNullOrEmpty(Configuration.GetSetting("LicenseToName")))
+     {
+         <text>@About.Message_LicenseTo</text> <a href="@Configuration.GetSetting("LicenseToLink")" target="_blank">@Configuration.GetSetting("LicenseToName")</a>
+     }
 </p>

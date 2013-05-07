@@ -117,19 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Message_Copyright" xml:space="preserve">
-    <value>Bản quyền </value>
+  <data name="Banner_Index" xml:space="preserve">
+    <value>Banner</value>
   </data>
-  <data name="Message_Introduction" xml:space="preserve">
-    <value>AMS &lt;i&gt;(viết tắt của &lt;u&gt;A&lt;/u&gt;dvertising &lt;u&gt;M&lt;/u&gt;anagement &lt;u&gt;S&lt;/u&gt;ystem)&lt;/i&gt; là một sản phẩm của &lt;a href="mailto:ngohuuloc@gmail.com" target="_blank"&gt;lCorp&lt;/a&gt;.</value>
+  <data name="Home_About" xml:space="preserve">
+    <value>About</value>
   </data>
-  <data name="Message_LicenseTo" xml:space="preserve">
-    <value>Bản quyền cấp cho</value>
+  <data name="Home_Index" xml:space="preserve">
+    <value>Home</value>
   </data>
-  <data name="Message_Version" xml:space="preserve">
-    <value>Phiên bản</value>
+  <data name="Report_Index" xml:space="preserve">
+    <value>Report</value>
   </data>
-  <data name="Page_Title" xml:space="preserve">
-    <value>Giới thiệu</value>
+  <data name="Setting_Index" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="Website_Index" xml:space="preserve">
+    <value>Website</value>
   </data>
 </root>

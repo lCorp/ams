@@ -1106,6 +1106,30 @@ namespace AMS.Models.Entities
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
+        public global::System.String ModuleCode
+        {
+            get
+            {
+                return _ModuleCode;
+            }
+            set
+            {
+                OnModuleCodeChanging(value);
+                ReportPropertyChanging("ModuleCode");
+                _ModuleCode = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ModuleCode");
+                OnModuleCodeChanged();
+            }
+        }
+        private global::System.String _ModuleCode;
+        partial void OnModuleCodeChanging(global::System.String value);
+        partial void OnModuleCodeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public Nullable<global::System.Guid> ParentID
         {
             get
@@ -1486,14 +1510,14 @@ namespace AMS.Models.Entities
         /// Create a new Permission object.
         /// </summary>
         /// <param name="accountID">Initial value of the AccountID property.</param>
-        /// <param name="moduleID">Initial value of the ModuleID property.</param>
         /// <param name="accountType">Initial value of the AccountType property.</param>
-        public static Permission CreatePermission(global::System.Guid accountID, global::System.Guid moduleID, global::System.Int32 accountType)
+        /// <param name="moduleID">Initial value of the ModuleID property.</param>
+        public static Permission CreatePermission(global::System.Guid accountID, global::System.Int32 accountType, global::System.Guid moduleID)
         {
             Permission permission = new Permission();
             permission.AccountID = accountID;
-            permission.ModuleID = moduleID;
             permission.AccountType = accountType;
+            permission.ModuleID = moduleID;
             return permission;
         }
 
@@ -1532,33 +1556,6 @@ namespace AMS.Models.Entities
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Guid ModuleID
-        {
-            get
-            {
-                return _ModuleID;
-            }
-            set
-            {
-                if (_ModuleID != value)
-                {
-                    OnModuleIDChanging(value);
-                    ReportPropertyChanging("ModuleID");
-                    _ModuleID = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("ModuleID");
-                    OnModuleIDChanged();
-                }
-            }
-        }
-        private global::System.Guid _ModuleID;
-        partial void OnModuleIDChanging(global::System.Guid value);
-        partial void OnModuleIDChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
         public global::System.Int32 AccountType
         {
             get
@@ -1580,6 +1577,33 @@ namespace AMS.Models.Entities
         private global::System.Int32 _AccountType;
         partial void OnAccountTypeChanging(global::System.Int32 value);
         partial void OnAccountTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid ModuleID
+        {
+            get
+            {
+                return _ModuleID;
+            }
+            set
+            {
+                if (_ModuleID != value)
+                {
+                    OnModuleIDChanging(value);
+                    ReportPropertyChanging("ModuleID");
+                    _ModuleID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ModuleID");
+                    OnModuleIDChanged();
+                }
+            }
+        }
+        private global::System.Guid _ModuleID;
+        partial void OnModuleIDChanging(global::System.Guid value);
+        partial void OnModuleIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.

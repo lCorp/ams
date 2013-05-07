@@ -24,7 +24,8 @@ namespace AMS
                 "~/Scripts/knockout-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/metro/metro.css"));
+                "~/Content/metro/metro.css",
+                "~/Content/ams.css"));
 
             bundles.Add(new StyleBundle("~/Content/jqueryui/base/css").Include(
             "~/Content/jqueryui/base/jquery.ui.core.css",

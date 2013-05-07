@@ -70,11 +70,20 @@ namespace AMS.Views.Home.App_LocalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AMS (stands for &lt;u&gt;A&lt;/u&gt;dvertising &lt;u&gt;M&lt;/u&gt;anagement &lt;u&gt;S&lt;/u&gt;ystem) is a product of &lt;a href=&quot;mailto:ngohuuloc@gmail.com&quot; target=&quot;_blank&quot;&gt;lCorp&lt;/a&gt;..
+        ///   Looks up a localized string similar to AMS &lt;i&gt;(stands for &lt;u&gt;A&lt;/u&gt;dvertising &lt;u&gt;M&lt;/u&gt;anagement &lt;u&gt;S&lt;/u&gt;ystem)&lt;/i&gt; is a product of &lt;a href=&quot;mailto:ngohuuloc@gmail.com&quot; target=&quot;_blank&quot;&gt;lCorp&lt;/a&gt;..
         /// </summary>
         public static string Message_Introduction {
             get {
                 return ResourceManager.GetString("Message_Introduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to License to.
+        /// </summary>
+        public static string Message_LicenseTo {
+            get {
+                return ResourceManager.GetString("Message_LicenseTo", resourceCulture);
             }
         }
         
