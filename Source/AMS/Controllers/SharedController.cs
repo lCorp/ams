@@ -23,11 +23,6 @@ namespace AMS.Controllers
             return View();
         }
 
-        public ActionResult PageNotFound()
-        {
-            return View();
-        }
-
         /// <summary>
         /// Change the current culture and set it to session
         /// </summary>

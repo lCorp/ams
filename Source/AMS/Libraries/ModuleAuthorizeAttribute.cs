@@ -40,11 +40,13 @@ namespace AMS.Libraries
                                 return;
                             }
                         }
-                        filterContext.Result = new RedirectResult("~/Module/AccessDenied");
-                        return;
+                        throw new UnauthorizedAccessException();
                     }
                 }
-                filterContext.Result = new HttpUnauthorizedResult();
+                else
+                {
+                    filterContext.Result = new HttpUnauthorizedResult();
+                }
             }
         }
 

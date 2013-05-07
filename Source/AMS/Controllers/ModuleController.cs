@@ -17,39 +17,26 @@ namespace AMS.Controllers
             this.context = new AMSEntities();
         }
 
-        //
-        // GET: /Module/
-
-        public ActionResult AccessDenied()
+        public ActionResult Access(Guid id)
         {
-            return View();
-        }
-
-        public ActionResult Access(string id)
-        {
-            try
-            {
-                Guid moduleID = new Guid(id);
-                Module module = this.context.Modules.SingleOrDefault(i => i.ID == moduleID);
+                Module module = this.context.Modules.SingleOrDefault(i => i.ID == id);
                 if (module == null)
                 {
-                    throw new HttpException(404, "Page not found.");
-                }
-                ViewBag.Title = Configuration.GetSetting(module.ModuleCode);
-                List<Module> subModules = this.context.Modules.Where(i => i.ParentID == moduleID).ToList();
-                if (subModules.Count > 0)
-                {
-                    return View(subModules);
+                    ViewBag.Title = Configuration.GetSetting(module.ModuleCode);
+                    List<Module> subModules = this.context.Modules.Where(i => i.ParentID == id).ToList();
+                    if (subModules.Count > 0)
+                    {
+                        return View(subModules);
+                    }
+                    else
+                    {
+                        return RedirectToAction(module.ActionCode, module.ControllerCode);
+                    }
                 }
                 else
                 {
-                    return RedirectToAction(module.ActionCode, module.ControllerCode);
+                    return this.HttpNotFound();
                 }
-            }
-            catch (Exception ex)
-            {
-                throw new HttpException(404, ex.Message);
-            }
         }
 
         void IDisposable.Dispose()

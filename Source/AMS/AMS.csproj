@@ -214,16 +214,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.vi-VN.resx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Module\App_LocalResources\AccessDenied.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccessDenied.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Module\App_LocalResources\AccessDenied.vi-VN.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccessDenied.vi-VN.resx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Shared\App_LocalResources\Error.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -243,16 +233,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LogOnPartial.vi-VN.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\App_LocalResources\PageNotFound.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PageNotFound.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\App_LocalResources\PageNotFound.vi-VN.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PageNotFound.vi-VN.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -376,14 +356,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Module\App_LocalResources\AccessDenied.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AccessDenied.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Module\App_LocalResources\AccessDenied.vi-VN.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AccessDenied.vi-VN.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\App_LocalResources\Error.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Error.Designer.cs</LastGenOutput>
@@ -399,14 +371,6 @@
     <EmbeddedResource Include="Views\Shared\App_LocalResources\LogOnPartial.vi-VN.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LogOnPartial.vi-VN.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Shared\App_LocalResources\PageNotFound.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>PageNotFound.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Shared\App_LocalResources\PageNotFound.vi-VN.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>PageNotFound.vi-VN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -434,13 +398,7 @@
     <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Module\AccessDenied.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Module\Access.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\PageNotFound.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
