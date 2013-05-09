@@ -2,9 +2,9 @@
 <h2>@ViewBag.Title</h2>
 <p>
     <ul>
-        @foreach (var item in Model)
+        @foreach (var module in Model)
         {
-            <li>@Html.ActionLink(Resources.Modules.ResourceManager.GetString(item.ModuleCode, Resources.Modules.Culture) ?? item.ModuleName, "Access", "Module", new { id = item.ID }, null)</li>
+            <li>@Html.ActionLink(Resources.Modules.ResourceManager.GetString(module.ModuleCode, Resources.Modules.Culture) ?? module.ModuleName, "Access", "Module", new { id = module.ID }, null)</li>
         }
     </ul>
 </p>

@@ -1,10 +1,11 @@
 ﻿@using AMS.Views.Shared.App_LocalResources
-
 @{
     ViewBag.Title = Error.Page_Title;
 }
-
 <h2>@ViewBag.Title</h2>
 <p>
-     @MvcHtmlString.Create(Error.Message_CommonError)
+    @MvcHtmlString.Create(Error.Message_CommonError)
+</p>
+<p>
+    <i>@MvcHtmlString.Create(ViewBag.ErrorMessage)</i>
 </p>

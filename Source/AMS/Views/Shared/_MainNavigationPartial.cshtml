@@ -1,0 +1,7 @@
+﻿@model List<Module>
+<ul id="menu" class="metro-list">
+    @foreach (var module in Model)
+    {
+        <li>@Html.ActionLink(Resources.Modules.ResourceManager.GetString(module.ModuleCode, Resources.Modules.Culture) ?? module.ModuleName, "Access", "Module", new { id = module.ID }, null)</li>
+    }
+</ul>

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using AMS.Models.Entities;
 using AMS.Libraries;
 using System.Web.Security;
+using System.Net;
 
 namespace AMS.Libraries
 {
@@ -40,7 +41,7 @@ namespace AMS.Libraries
                                 return;
                             }
                         }
-                        throw new UnauthorizedAccessException();
+                        filterContext.Result = new RedirectResult("~/Shared/Error/" + HttpStatusCode.Unauthorized);
                     }
                 }
                 else

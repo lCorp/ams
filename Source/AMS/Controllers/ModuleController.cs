@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using AMS.Models.Entities;
 using AMS.Libraries;
+using System.Net;
 
 namespace AMS.Controllers
 {
@@ -19,24 +20,24 @@ namespace AMS.Controllers
 
         public ActionResult Access(Guid id)
         {
-                Module module = this.context.Modules.SingleOrDefault(i => i.ID == id);
-                if (module == null)
+            Module module = this.context.Modules.SingleOrDefault(i => i.ID == id);
+            if (module != null)
+            {
+                List<Module> subModules = this.context.Modules.Where(i => i.ParentID == id).ToList();
+                if (subModules.Count > 0)
                 {
-                    ViewBag.Title = Configuration.GetSetting(module.ModuleCode);
-                    List<Module> subModules = this.context.Modules.Where(i => i.ParentID == id).ToList();
-                    if (subModules.Count > 0)
-                    {
-                        return View(subModules);
-                    }
-                    else
-                    {
-                        return RedirectToAction(module.ActionCode, module.ControllerCode);
-                    }
+                    ViewBag.Title = App_GlobalResources.Modules.ResourceManager.GetString(module.ModuleCode) ?? module.ModuleName;
+                    return View(subModules);
                 }
                 else
                 {
-                    return this.HttpNotFound();
+                    return Redirect("~/" + module.ControllerCode + "/" + module.ActionCode + "/" + module.Parameters);
                 }
+            }
+            else
+            {
+                return RedirectToAction("Error", "Shared", new { id = HttpStatusCode.NotFound });
+            }
         }
 
         void IDisposable.Dispose()

@@ -61,6 +61,33 @@ namespace AMS.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change password.
+        /// </summary>
+        public static string Account_ChangePassword {
+            get {
+                return ResourceManager.GetString("Account_ChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log on.
+        /// </summary>
+        public static string Account_LogOn {
+            get {
+                return ResourceManager.GetString("Account_LogOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account register.
+        /// </summary>
+        public static string Account_Register {
+            get {
+                return ResourceManager.GetString("Account_Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Banner.
         /// </summary>
         public static string Banner_Index {

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Configuration;
 using System.Globalization;
 using AMS.Libraries;
+using System.Net;
 
 namespace AMS.Controllers
 {
@@ -18,8 +19,9 @@ namespace AMS.Controllers
         /// Return the page that handle the common error
         /// </summary>
         /// <returns></returns>
-        public ActionResult Error()
+        public ActionResult Error(HttpStatusCode id)
         {
+            ViewBag.ErrorMessage = App_GlobalResources.Messages.ResourceManager.GetString("HttpStatusCode_" + (int)id, App_GlobalResources.Messages.Culture);
             return View();
         }
 

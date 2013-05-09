@@ -59,5 +59,23 @@ namespace AMS.App_GlobalResources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Access denied..
+        /// </summary>
+        public static string HttpStatusCode_401 {
+            get {
+                return ResourceManager.GetString("HttpStatusCode_401", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The page you are looking for is not found..
+        /// </summary>
+        public static string HttpStatusCode_404 {
+            get {
+                return ResourceManager.GetString("HttpStatusCode_404", resourceCulture);
+            }
+        }
     }
 }
