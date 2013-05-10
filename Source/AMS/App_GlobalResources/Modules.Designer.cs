@@ -61,42 +61,6 @@ namespace AMS.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change password.
-        /// </summary>
-        public static string Account_ChangePassword {
-            get {
-                return ResourceManager.GetString("Account_ChangePassword", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Log on.
-        /// </summary>
-        public static string Account_LogOn {
-            get {
-                return ResourceManager.GetString("Account_LogOn", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Account register.
-        /// </summary>
-        public static string Account_Register {
-            get {
-                return ResourceManager.GetString("Account_Register", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Banner.
-        /// </summary>
-        public static string Banner_Index {
-            get {
-                return ResourceManager.GetString("Banner_Index", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         public static string Home_About {
@@ -111,33 +75,6 @@ namespace AMS.App_GlobalResources {
         public static string Home_Index {
             get {
                 return ResourceManager.GetString("Home_Index", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Report.
-        /// </summary>
-        public static string Report_Index {
-            get {
-                return ResourceManager.GetString("Report_Index", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Setting.
-        /// </summary>
-        public static string Setting_Index {
-            get {
-                return ResourceManager.GetString("Setting_Index", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Website.
-        /// </summary>
-        public static string Website_Index {
-            get {
-                return ResourceManager.GetString("Website_Index", resourceCulture);
             }
         }
     }

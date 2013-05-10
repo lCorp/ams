@@ -4,27 +4,28 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AMS.Models.Entities;
-using AMS.Libraries;
+using AMS.Utilities;
 using System.Net;
+using AMS.Models.Services;
 
 namespace AMS.Controllers
 {
     public class ModuleController : Controller, IDisposable
     {
-        private AMSEntities context;
+        private UnitOfWork unitOfWork;
 
         public ModuleController()
         {
-            this.context = new AMSEntities();
+            this.unitOfWork = new UnitOfWork();
         }
 
         public ActionResult Access(Guid id)
         {
-            Module module = this.context.Modules.SingleOrDefault(i => i.ID == id);
+            Module module = this.unitOfWork.ModuleRepository.GetModule(id);
             if (module != null)
             {
-                List<Module> subModules = this.context.Modules.Where(i => i.ParentID == id).ToList();
-                if (subModules.Count > 0)
+                IEnumerable<Module> subModules = this.unitOfWork.ModuleRepository.GetModulesFor(module.ID, User.Identity.Name);
+                if (subModules.Count() > 0)
                 {
                     ViewBag.Title = App_GlobalResources.Modules.ResourceManager.GetString(module.ModuleCode) ?? module.ModuleName;
                     return View(subModules);
@@ -42,7 +43,7 @@ namespace AMS.Controllers
 
         void IDisposable.Dispose()
         {
-            this.context.Dispose();
+            this.unitOfWork.Dispose();
             base.Dispose();
         }
     }

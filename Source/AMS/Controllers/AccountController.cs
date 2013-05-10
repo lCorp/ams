@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using AMS.Models.ViewModels;
 using System.Web.Security;
 using AMS.Models.Entities;
-using AMS.Libraries;
+using AMS.Utilities;
 
 namespace AMS.Controllers
 {
@@ -49,7 +49,7 @@ namespace AMS.Controllers
             if (ModelState.IsValid)
             {
                 string encryptedPassword = Cryptography.EncryptPassword(model.Password);
-                if (this.context.Accounts.Count(i => i.UserName == model.UserName && i.Password == encryptedPassword && i.Status == (int)EntityStatus.Active) == 1)
+                if (this.context.Accounts.Count(i => i.UserName == model.UserName && i.Password == encryptedPassword && i.Status == (int)ObjectStatus.Active) == 1)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                     return RedirectToLocalUrl(returnUrl);
@@ -83,7 +83,7 @@ namespace AMS.Controllers
             if (ModelState.IsValid)
             {
                 string encryptedPassword = Cryptography.EncryptPassword(model.Password);
-                if (this.context.Accounts.Count(i => i.UserName == model.UserName && i.Password == encryptedPassword && i.Status == (int)EntityStatus.Active) == 1)
+                if (this.context.Accounts.Count(i => i.UserName == model.UserName && i.Password == encryptedPassword && i.Status == (int)ObjectStatus.Active) == 1)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                     return RedirectToLocalUrl(returnUrl);

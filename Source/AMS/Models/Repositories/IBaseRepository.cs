@@ -9,6 +9,7 @@ namespace AMS.Models.Repositories
 {
     public interface IBaseRepository<TEntity> where TEntity : EntityObject
     {
+        ObjectContext ObjectContext { get; }
         ObjectSet<TEntity> ObjectSet { get; }
     }
 }

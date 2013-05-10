@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Configuration;
 
-namespace AMS.Libraries
+namespace AMS.Utilities
 {
     public class Configuration
     {

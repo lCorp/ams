@@ -3,23 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using AMS.Utilities;
 
 namespace AMS.Controllers
 {
-    [ModuleAuthorize]
-    public class HomeController : Controller
+    public class SettingController : Controller
     {
-        //Home/Index
+        //
+        // GET: /Setting/
+
         public ActionResult Index()
         {
             return View();
         }
 
-        //Home/About
-        public ActionResult About()
-        {
-            return View();
-        }
     }
 }

@@ -17,7 +17,11 @@
             </div>
         </header>
         <nav>
-
+            @using (AMS.Models.Services.UnitOfWork unitOfWork = new AMS.Models.Services.UnitOfWork())
+            {
+                var modules = unitOfWork.ModuleRepository.GetModulesFor(null, User.Identity.Name);
+                @Html.Partial("_MainNavigationPartial", modules);
+            }
         </nav>
         <section id="main">
             @RenderBody()

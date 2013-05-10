@@ -18,6 +18,14 @@ namespace AMS.Models.Repositories
             this.objectSet = this.objectContext.CreateObjectSet<TEntity>();
         }
 
+        public ObjectContext ObjectContext
+        {
+            get
+            {
+                return this.objectContext;
+            }
+        }
+
         public ObjectSet<TEntity> ObjectSet
         {
             get

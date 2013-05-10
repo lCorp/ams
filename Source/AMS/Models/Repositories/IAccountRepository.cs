@@ -6,6 +6,9 @@ using AMS.Models.Entities;
 
 namespace AMS.Models.Repositories
 {
-    public partial interface IAccountRepository : IBaseRepository<Account> { }
-    public partial interface IModuleRepository : IBaseRepository<Module> { }
+    public partial interface IAccountRepository
+    {
+        Account GetAccount(Guid id);
+        Account GetAccount(string userName);
+    }
 }

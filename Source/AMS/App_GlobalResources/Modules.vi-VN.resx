@@ -117,31 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Account_ChangePassword" xml:space="preserve">
-    <value>Đổi mật khẩu</value>
-  </data>
-  <data name="Account_LogOn" xml:space="preserve">
-    <value>Đăng nhập</value>
-  </data>
-  <data name="Account_Register" xml:space="preserve">
-    <value>Đăng ký tài khoản</value>
-  </data>
-  <data name="Banner_Index" xml:space="preserve">
-    <value>Banner</value>
-  </data>
   <data name="Home_About" xml:space="preserve">
     <value>Giới thiệu</value>
   </data>
   <data name="Home_Index" xml:space="preserve">
     <value>Trang chủ</value>
-  </data>
-  <data name="Report_Index" xml:space="preserve">
-    <value>Báo cáo</value>
-  </data>
-  <data name="Setting_Index" xml:space="preserve">
-    <value>Cấu hình</value>
-  </data>
-  <data name="Website_Index" xml:space="preserve">
-    <value>Website</value>
   </data>
 </root>
